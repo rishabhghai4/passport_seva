@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img">
+  <title>Illustration of a passport booklet and a boarding pass</title>
+  <rect x="0" y="0" width="480" height="360" fill="#eef3fa"/>
+  <circle cx="390" cy="70" r="120" fill="#dbe6f5"/>
+  <g transform="rotate(-8 300 210)">
+    <rect x="190" y="150" width="250" height="110" rx="10" fill="#ffffff" stroke="#b1b4b6" stroke-width="2"/>
+    <rect x="190" y="150" width="250" height="28" rx="10" fill="#ff9933"/>
+    <rect x="190" y="168" width="250" height="10" fill="#ff9933"/>
+    <path d="M370 150v110" stroke="#b1b4b6" stroke-width="2" stroke-dasharray="6 6"/>
+    <rect x="208" y="196" width="70" height="10" rx="5" fill="#0b2149"/>
+    <rect x="208" y="216" width="120" height="8" rx="4" fill="#b1b4b6"/>
+    <rect x="208" y="232" width="90" height="8" rx="4" fill="#b1b4b6"/>
+    <path d="M300 200l18 6-18 6-4-6z" fill="#0b2149"/>
+    <rect x="386" y="196" width="38" height="8" rx="4" fill="#b1b4b6"/>
+    <rect x="386" y="212" width="38" height="30" rx="2" fill="#0b2149" opacity=".85"/>
+  </g>
+  <g transform="rotate(6 160 190)">
+    <rect x="70" y="60" width="180" height="250" rx="12" fill="#0b2149"/>
+    <rect x="70" y="60" width="18" height="250" rx="6" fill="#071634"/>
+    <circle cx="169" cy="160" r="42" fill="none" stroke="#e8c26a" stroke-width="4"/>
+    <ellipse cx="169" cy="160" rx="18" ry="42" fill="none" stroke="#e8c26a" stroke-width="3"/>
+    <path d="M127 160h84M133 138h72M133 182h72" stroke="#e8c26a" stroke-width="3"/>
+    <rect x="114" y="230" width="110" height="10" rx="5" fill="#e8c26a"/>
+    <rect x="134" y="250" width="70" height="7" rx="3.5" fill="#e8c26a" opacity=".8"/>
+    <rect x="153" y="276" width="32" height="20" rx="3" fill="none" stroke="#e8c26a" stroke-width="3"/>
+    <circle cx="169" cy="286" r="5" fill="none" stroke="#e8c26a" stroke-width="2.5"/>
+  </g>
+  <g transform="rotate(-14 400 290)" opacity=".95">
+    <circle cx="400" cy="292" r="40" fill="none" stroke="#138808" stroke-width="4"/>
+    <circle cx="400" cy="292" r="31" fill="none" stroke="#138808" stroke-width="2" stroke-dasharray="4 5"/>
+    <path d="M384 292l11 11 22-22" fill="none" stroke="#138808" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-IN" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="theme-color" content="#0b2149">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/atkinson-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/atkinson-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <script>
+    // Apply saved accessibility preferences before first paint (no flash).
+    (function (d) {
+      d.className = d.className.replace("no-js", "js");
+      try {
+        var s = localStorage.getItem("ps-text-size");
+        var c = localStorage.getItem("ps-contrast");
+        if (s) d.setAttribute("data-text-size", s);
+        if (c) d.setAttribute("data-contrast", c);
+      } catch (e) {}
+    })(document.documentElement);
+  </script>
+  <script src="assets/js/main.js" defer></script>{{scripts}}
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <section class="utility-bar" aria-label="Helpline and accessibility options">
+    <div class="width-container utility-bar__inner">
+      <div class="utility-bar__group">
+        <span class="utility-bar__helpline">{{icon:phone:16}} National Call Centre <a href="tel:18002581800"><strong>1800-258-1800</strong></a></span>
+      </div>
+      <div class="utility-bar__group">
+        <a class="utility-bar__sr" href="help.html#accessibility">Screen reader access</a>
+        <div class="text-size" role="group" aria-label="Text size">
+          <button type="button" class="utility-btn" data-text-size="small" aria-pressed="false">A−<span class="visually-hidden"> smaller text</span></button>
+          <button type="button" class="utility-btn" data-text-size="default" aria-pressed="true">A<span class="visually-hidden"> default text size</span></button>
+          <button type="button" class="utility-btn" data-text-size="large" aria-pressed="false">A+<span class="visually-hidden"> larger text</span></button>
+        </div>
+        <button type="button" class="utility-btn contrast-toggle" data-contrast-toggle aria-pressed="false">High contrast</button>
+        <a href="https://www.passportindia.gov.in/psp" lang="hi" hreflang="hi">हिन्दी<span class="visually-hidden" lang="en"> (Hindi, on the official website)</span></a>
+      </div>
+    </div>
+  </section>
+
+  <header class="header" role="banner">
+    <div class="width-container header__inner">
+      <a href="index.html" class="brand">
+        <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true" focusable="false">
+          <rect x="9" y="4" width="30" height="40" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/>
+          <circle cx="24" cy="20" r="8" fill="none" stroke="currentColor" stroke-width="2"/>
+          <ellipse cx="24" cy="20" rx="3.4" ry="8" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M16 20h16" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M16 33.5h16" stroke="#ff9933" stroke-width="2.5" stroke-linecap="round"/>
+          <path d="M16 38h16" stroke="#2fb52a" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        <span class="brand__text">
+          <span class="brand__name">Passport Seva</span>
+          <span class="brand__dept">Ministry of External Affairs, Government of India</span><span class="visually-hidden"> – home page</span>
+        </span>
+      </a>
+      <div class="header__actions">
+        <form class="search-form header__search" action="search.html" method="get" role="search" aria-label="Site search">
+          <label for="site-search" class="visually-hidden">Search Passport Seva</label>
+          <input class="search-form__input" id="site-search" name="q" type="search" placeholder="Search Passport Seva" autocomplete="off">
+          <button class="search-form__button" type="submit">{{icon:search:20}}<span class="visually-hidden">Search</span></button>
+        </form>
+        <button type="button" class="menu-toggle" aria-controls="primary-nav" aria-expanded="false" hidden>
+          Menu {{icon:chevron-down:18:menu-toggle__icon}}
+        </button>
+      </div>
+    </div>
+    <div class="tricolour" aria-hidden="true"><span></span><span></span><span></span></div>
+    <nav class="nav" id="primary-nav" aria-label="Main">
+      <div class="width-container">
+        <ul class="nav__list">
+{{nav}}
+        </ul>
+        <form class="search-form nav__search" action="search.html" method="get" role="search" aria-label="Site search in menu">
+          <label for="site-search-mobile" class="visually-hidden">Search Passport Seva</label>
+          <input class="search-form__input" id="site-search-mobile" name="q" type="search" placeholder="Search Passport Seva" autocomplete="off">
+          <button class="search-form__button" type="submit">{{icon:search:20}}<span class="visually-hidden">Search</span></button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <div class="width-container">
+    <section class="phase-banner" aria-label="Prototype notice">
+      <p><strong class="tag tag--saffron">Concept</strong>
+        <span>This is a redesign prototype, not the official service. To apply for a passport, use <a href="https://www.passportindia.gov.in/psp">passportindia.gov.in</a>.</span></p>
+    </section>
+    {{breadcrumbs}}
+  </div>
+
+  <main id="main-content" class="main-wrapper {{main_class}}" tabindex="-1">
+{{content}}
+
+    <div class="width-container">
+      <section class="feedback" aria-label="Page feedback" data-feedback>
+        <div class="feedback__inner">
+          <div class="feedback__question" data-feedback-prompt>
+            <h2>Is this page useful?</h2>
+            <button type="button" class="button button--secondary button--small" data-feedback-answer="yes">Yes <span class="visually-hidden">this page is useful</span></button>
+            <button type="button" class="button button--secondary button--small" data-feedback-answer="no">No <span class="visually-hidden">this page is not useful</span></button>
+          </div>
+          <p class="feedback__thanks" data-feedback-thanks role="status" hidden></p>
+          <a class="small" href="https://www.passportindia.gov.in/psp/Grievance">Report a problem with this page</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="width-container">
+      <div class="footer__nav">
+        <nav aria-labelledby="footer-services">
+          <h2 class="footer__heading" id="footer-services">Passport services</h2>
+          <ul class="footer__list footer__list--two">
+            <li><a href="apply.html">Apply for a new passport</a></li>
+            <li><a href="apply.html#renew">Renew or re-issue a passport</a></li>
+            <li><a href="tatkaal.html">Get a passport urgently (Tatkaal)</a></li>
+            <li><a href="fees.html">Fees and fee calculator</a></li>
+            <li><a href="documents.html">Documents you need</a></li>
+            <li><a href="track.html">Track your application</a></li>
+            <li><a href="offices.html">Find a Passport Office</a></li>
+            <li><a href="https://www.passportindia.gov.in/psp/ApplyPCC">Police Clearance Certificate</a></li>
+            <li><a href="apply.html#lost">Lost, stolen or damaged passport</a></li>
+            <li><a href="https://www.passportindia.gov.in/psp/missionPostAbroad">Apply from outside India</a></li>
+          </ul>
+        </nav>
+        <nav aria-labelledby="footer-gov">
+          <h2 class="footer__heading" id="footer-gov">Government of India</h2>
+          <ul class="footer__list">
+            <li><a href="https://www.mea.gov.in/">Ministry of External Affairs</a></li>
+            <li><a href="https://www.india.gov.in/">National Portal of India</a></li>
+            <li><a href="https://indianvisaonline.gov.in/">eVisa and Visa on Arrival</a></li>
+            <li><a href="https://boi.gov.in/">Bureau of Immigration</a></li>
+            <li><a href="https://www.madad.gov.in/">MADAD consular grievances</a></li>
+            <li><a href="https://emigrate.gov.in/">eMigrate</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer__meta">
+        <div class="footer__owner">
+          <ul class="footer__inline">
+            <li><a href="help.html">Help</a></li>
+            <li><a href="help.html#contact">Contact</a></li>
+            <li><a href="help.html#accessibility">Accessibility statement</a></li>
+            <li><a href="https://www.passportindia.gov.in/psp/terms">Terms and conditions</a></li>
+            <li><a href="https://www.passportindia.gov.in/psp/policy">Privacy policy</a></li>
+            <li><a href="https://www.passportindia.gov.in/psp/hyperlinking">Hyperlinking policy</a></li>
+          </ul>
+          <p>Concept redesign of the Passport Seva website. Service information is taken from <a href="https://www.passportindia.gov.in/psp">passportindia.gov.in</a>, which is owned by the Ministry of External Affairs, Government of India.</p>
+          <p>This prototype is not an official Government of India website.</p>
+        </div>
+        <p class="footer__helpline">{{icon:phone:28}}<span>National Call Centre<br><a href="tel:18002581800"><strong>1800-258-1800</strong></a> <span class="secondary">(toll free)</span></span></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

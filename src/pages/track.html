@@ -1,0 +1,109 @@
+<!--meta {"title": "Track your passport application", "description": "Check where your passport application has reached using your file number and date of birth, and find out what each status means.", "nav": "track", "breadcrumbs": [["Home", "index.html"], ["Passports", "index.html#get-passport"], ["Track application", null]], "scripts": ["track.js"]} -->
+<div class="width-container">
+  <div class="grid grid--two-thirds">
+    <div class="col-two-thirds">
+      <div class="error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1" data-error-summary hidden>
+        <h2 class="error-summary__title" id="error-summary-title">There is a problem</h2>
+        <ul class="error-summary__list" data-error-list></ul>
+      </div>
+
+      <h1>Track your passport application</h1>
+      <p class="lead">Check where your application has reached using your file number and date of birth.</p>
+
+      <form action="https://www.passportindia.gov.in/psp/trackApplicationService" method="get" novalidate data-track-form>
+        <div class="form-group" data-field="file-number">
+          <label class="label label--l" for="file-number">File number</label>
+          <span class="hint" id="file-number-hint">15 letters and numbers, for example DL1067123456713. It is on the acknowledgement you got at your appointment.</span>
+          <span class="error-message" id="file-number-error" hidden></span>
+          <input class="input input--w20 input--code" id="file-number" name="fileNo" type="text" spellcheck="false" autocomplete="off" autocapitalize="characters" maxlength="20" aria-describedby="file-number-hint">
+        </div>
+
+        <div class="form-group" data-field="dob">
+          <fieldset class="fieldset" role="group" aria-describedby="dob-hint">
+            <legend class="fieldset__legend">Date of birth</legend>
+            <span class="hint" id="dob-hint">For example, 27 3 1990</span>
+            <span class="error-message" id="dob-error" hidden></span>
+            <div class="date-input">
+              <div class="date-input__item">
+                <label class="label" for="dob-day">Day</label>
+                <input class="input input--w2" id="dob-day" name="dobDay" type="text" inputmode="numeric" autocomplete="bday-day" maxlength="2">
+              </div>
+              <div class="date-input__item">
+                <label class="label" for="dob-month">Month</label>
+                <input class="input input--w2" id="dob-month" name="dobMonth" type="text" inputmode="numeric" autocomplete="bday-month" maxlength="2">
+              </div>
+              <div class="date-input__item">
+                <label class="label" for="dob-year">Year</label>
+                <input class="input input--w4" id="dob-year" name="dobYear" type="text" inputmode="numeric" autocomplete="bday-year" maxlength="4">
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button type="submit" class="button" data-module="track-submit">Check status</button>
+      </form>
+
+      <div data-track-result tabindex="-1" hidden>
+        <div class="panel panel--navy">
+          <h2 class="panel__title">Your details are ready to check</h2>
+          <p class="panel__body">File number <strong class="num" data-track-file></strong></p>
+        </div>
+        <p>This prototype does not connect to the passport system. Continue on the official tracker and enter the same details to see your live status.</p>
+        <div class="button-group">
+          <a class="button button--start" href="https://www.passportindia.gov.in/psp/trackApplicationService">Continue to the official tracker {{icon:arrow-right:22}}</a>
+          <a href="track.html">Check a different application</a>
+        </div>
+      </div>
+
+      <h2 id="statuses">What your status means</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <p class="timeline__title">Application submitted</p>
+          <p>Your documents, photo and fingerprints were accepted at your appointment.</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__title">Police verification in progress</p>
+          <p>Your local police station is checking your details. They may visit you or ask you to visit them.</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__title">Police verification report received</p>
+          <p>The report has reached the Passport Office and is being reviewed.</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__title">Passport granted</p>
+          <p>Your application has been approved and sent for printing.</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__title">Passport printed</p>
+          <p>Your passport has been printed and is being prepared for posting.</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__title">Passport dispatched</p>
+          <p>Your passport has been sent by Speed Post. The status shows a tracking number you can use on the India Post website.</p>
+        </li>
+      </ol>
+
+      <h3>If your application is on hold</h3>
+      <p>The Passport Office needs something from you, usually a document. Check your SMS and email, and bring what is asked for to the Passport Seva Kendra as soon as you can.</p>
+      <h3>If your police report is adverse</h3>
+      <p>Contact your <a href="offices.html">Passport Office</a> to find out why. If it can be resolved, you can ask for police verification to be done again.</p>
+      <h3>If you have waited a long time</h3>
+      <p>Call the National Call Centre on <a href="tel:18002581800">1800-258-1800</a>, or <a href="https://www.passportindia.gov.in/psp/Grievance">register a grievance{{ext}}</a>.</p>
+    </div>
+
+    <aside aria-label="Related content">
+      <div class="related related--sticky">
+        <h2 class="related__heading">Other ways to track</h2>
+        <ul>
+          <li><a href="https://www.passportindia.gov.in/psp/MpassportApp">mPassport Seva app{{ext}}</a></li>
+          <li><a href="tel:18002581800">Call 1800-258-1800</a></li>
+        </ul>
+        <h2 class="related__heading" style="margin-top: var(--s-5);">Related content</h2>
+        <ul>
+          <li><a href="help.html#police">How police verification works</a></li>
+          <li><a href="apply.html">Apply for a passport or renew one</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>

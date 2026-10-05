@@ -1,0 +1,79 @@
+<!--meta {"title": "Find a Passport Office", "description": "Search India's 37 Regional Passport Offices by city or state, and find out how Passport Offices, Passport Seva Kendras and Post Office Passport Seva Kendras differ.", "nav": "offices", "breadcrumbs": [["Home", "index.html"], ["Passports", "index.html#get-passport"], ["Passport offices", null]], "scripts": ["offices.js"]} -->
+<div class="width-container">
+  <div class="col-two-thirds">
+    <h1>Find a Passport Office</h1>
+    <p class="lead">There are 37 Regional Passport Offices in India, and more than 500 places where you can have your appointment.</p>
+    <p>Your Passport Office depends on your present address. It is chosen for you when you register on Passport Seva.</p>
+  </div>
+
+  <h2 class="h-m" id="types">Types of office</h2>
+  <ul class="link-grid">
+    <li>
+      <span class="link-grid__title">Regional Passport Office (RPO)</span>
+      <p class="link-grid__desc">Checks and grants applications for its area. Visit if you are asked to, for example about a pending or held application.</p>
+    </li>
+    <li>
+      <span class="link-grid__title">Passport Seva Kendra (PSK)</span>
+      <p class="link-grid__desc">Where most people go for their appointment. Your documents are checked and your photo and fingerprints are taken.</p>
+    </li>
+    <li>
+      <span class="link-grid__title">Post Office Passport Seva Kendra (POPSK)</span>
+      <p class="link-grid__desc">A Passport Seva Kendra at a head post office, so you can have your appointment closer to home.</p>
+    </li>
+  </ul>
+  <p><a href="https://www.passportindia.gov.in/psp/LocatePsk">Find a Passport Seva Kendra or Post Office Passport Seva Kendra near you{{ext}}</a></p>
+
+  <section aria-labelledby="rpo-title">
+    <h2 id="rpo-title" class="h-m">Regional Passport Offices</h2>
+    <div class="form-group col-two-thirds" data-finder hidden>
+      <label class="label" for="office-search">Search by city or state</label>
+      <span class="hint" id="office-search-hint">For example, Kochi or Tamil Nadu</span>
+      <input class="input input--w20" id="office-search" type="search" autocomplete="off" aria-describedby="office-search-hint" aria-controls="office-list">
+      <p class="result-count" role="status" aria-live="polite" data-finder-count></p>
+    </div>
+    <ul class="finder-results" id="office-list">
+          <li data-office="ahmedabad gujarat"><span class="finder-results__name">Ahmedabad</span><span class="finder-results__state">Gujarat</span></li>
+          <li data-office="amritsar punjab"><span class="finder-results__name">Amritsar</span><span class="finder-results__state">Punjab</span></li>
+          <li data-office="bareilly uttar pradesh"><span class="finder-results__name">Bareilly</span><span class="finder-results__state">Uttar Pradesh</span></li>
+          <li data-office="bengaluru karnataka bangalore"><span class="finder-results__name">Bengaluru</span><span class="finder-results__state">Karnataka</span></li>
+          <li data-office="bhopal madhya pradesh"><span class="finder-results__name">Bhopal</span><span class="finder-results__state">Madhya Pradesh</span></li>
+          <li data-office="bhubaneswar odisha orissa"><span class="finder-results__name">Bhubaneswar</span><span class="finder-results__state">Odisha</span></li>
+          <li data-office="chandigarh chandigarh punjab haryana"><span class="finder-results__name">Chandigarh</span><span class="finder-results__state">Chandigarh</span></li>
+          <li data-office="chennai tamil nadu madras"><span class="finder-results__name">Chennai</span><span class="finder-results__state">Tamil Nadu</span></li>
+          <li data-office="cochin kerala kochi ernakulam lakshadweep"><span class="finder-results__name">Cochin</span><span class="finder-results__state">Kerala</span></li>
+          <li data-office="coimbatore tamil nadu"><span class="finder-results__name">Coimbatore</span><span class="finder-results__state">Tamil Nadu</span></li>
+          <li data-office="dehradun uttarakhand"><span class="finder-results__name">Dehradun</span><span class="finder-results__state">Uttarakhand</span></li>
+          <li data-office="delhi delhi new delhi ncr"><span class="finder-results__name">Delhi</span><span class="finder-results__state">Delhi</span></li>
+          <li data-office="ghaziabad uttar pradesh noida ncr"><span class="finder-results__name">Ghaziabad</span><span class="finder-results__state">Uttar Pradesh</span></li>
+          <li data-office="goa goa panaji panjim"><span class="finder-results__name">Goa</span><span class="finder-results__state">Goa</span></li>
+          <li data-office="guwahati assam north east arunachal pradesh meghalaya mizoram manipur nagaland tripura"><span class="finder-results__name">Guwahati</span><span class="finder-results__state">Assam</span></li>
+          <li data-office="hyderabad telangana secunderabad"><span class="finder-results__name">Hyderabad</span><span class="finder-results__state">Telangana</span></li>
+          <li data-office="jaipur rajasthan"><span class="finder-results__name">Jaipur</span><span class="finder-results__state">Rajasthan</span></li>
+          <li data-office="jalandhar punjab"><span class="finder-results__name">Jalandhar</span><span class="finder-results__state">Punjab</span></li>
+          <li data-office="jammu jammu and kashmir"><span class="finder-results__name">Jammu</span><span class="finder-results__state">Jammu and Kashmir</span></li>
+          <li data-office="kolkata west bengal calcutta sikkim andaman nicobar"><span class="finder-results__name">Kolkata</span><span class="finder-results__state">West Bengal</span></li>
+          <li data-office="kota rajasthan"><span class="finder-results__name">Kota</span><span class="finder-results__state">Rajasthan</span></li>
+          <li data-office="kozhikode kerala calicut"><span class="finder-results__name">Kozhikode</span><span class="finder-results__state">Kerala</span></li>
+          <li data-office="lucknow uttar pradesh"><span class="finder-results__name">Lucknow</span><span class="finder-results__state">Uttar Pradesh</span></li>
+          <li data-office="madurai tamil nadu"><span class="finder-results__name">Madurai</span><span class="finder-results__state">Tamil Nadu</span></li>
+          <li data-office="mumbai maharashtra bombay"><span class="finder-results__name">Mumbai</span><span class="finder-results__state">Maharashtra</span></li>
+          <li data-office="nagpur maharashtra"><span class="finder-results__name">Nagpur</span><span class="finder-results__state">Maharashtra</span></li>
+          <li data-office="patna bihar"><span class="finder-results__name">Patna</span><span class="finder-results__state">Bihar</span></li>
+          <li data-office="pune maharashtra poona"><span class="finder-results__name">Pune</span><span class="finder-results__state">Maharashtra</span></li>
+          <li data-office="raipur chhattisgarh"><span class="finder-results__name">Raipur</span><span class="finder-results__state">Chhattisgarh</span></li>
+          <li data-office="ranchi jharkhand"><span class="finder-results__name">Ranchi</span><span class="finder-results__state">Jharkhand</span></li>
+          <li data-office="shimla himachal pradesh"><span class="finder-results__name">Shimla</span><span class="finder-results__state">Himachal Pradesh</span></li>
+          <li data-office="srinagar jammu and kashmir"><span class="finder-results__name">Srinagar</span><span class="finder-results__state">Jammu and Kashmir</span></li>
+          <li data-office="surat gujarat"><span class="finder-results__name">Surat</span><span class="finder-results__state">Gujarat</span></li>
+          <li data-office="tiruchirappalli tamil nadu trichy"><span class="finder-results__name">Tiruchirappalli</span><span class="finder-results__state">Tamil Nadu</span></li>
+          <li data-office="trivandrum kerala thiruvananthapuram"><span class="finder-results__name">Trivandrum</span><span class="finder-results__state">Kerala</span></li>
+          <li data-office="vijayawada andhra pradesh"><span class="finder-results__name">Vijayawada</span><span class="finder-results__state">Andhra Pradesh</span></li>
+          <li data-office="visakhapatnam andhra pradesh vizag"><span class="finder-results__name">Visakhapatnam</span><span class="finder-results__state">Andhra Pradesh</span></li>
+    </ul>
+    <p class="secondary" data-finder-empty hidden>No Passport Office matches your search. Check the spelling, or search for your state instead.</p>
+  </section>
+
+  <div class="inset">
+    <p>Each Passport Office may ask for extra documents. Check your office’s page on the <a href="https://www.passportindia.gov.in/psp/offices">official list of Passport Offices{{ext}}</a>.</p>
+  </div>
+</div>
