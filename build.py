@@ -13,6 +13,7 @@ GitHub Pages). Standard library only: run ``python3 build.py``.
 
 from __future__ import annotations
 
+import base64
 import html
 import json
 import re
@@ -121,10 +122,30 @@ def text_content(fragment: str) -> str:
     return re.sub(r"\s+", " ", html.unescape(fragment)).strip()
 
 
+def inline_fonts() -> None:
+    """Embed the woff2 files in main.css as data URIs.
+
+    Browsers block font files opened straight from disk (file://), so this
+    lets someone double-click docs/index.html and still get the right font.
+    """
+    css_path = OUT / "assets" / "css" / "main.css"
+    fonts_dir = OUT / "assets" / "fonts"
+
+    def to_data_uri(match: re.Match) -> str:
+        data = base64.b64encode((fonts_dir / match.group(1)).read_bytes()).decode("ascii")
+        return f'url("data:font/woff2;base64,{data}")'
+
+    css = re.sub(r'url\("\.\./fonts/([\w.-]+\.woff2)"\)', to_data_uri, css_path.read_text(encoding="utf-8"))
+    css_path.write_text(css, encoding="utf-8")
+    for font in fonts_dir.glob("*.woff2"):
+        font.unlink()
+
+
 def build() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     shutil.copytree(SRC / "assets", OUT / "assets")
+    inline_fonts()
     layout = (SRC / "_layout.html").read_text(encoding="utf-8")
 
     search_index = []

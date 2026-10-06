@@ -20,9 +20,13 @@ A redesign concept for the Indian Passport Seva website ([passportindia.gov.in](
 
 Fees, document lists and rules were checked against passportindia.gov.in in October 2026.
 
+## See it
+
+The quickest way is to double-click `docs/index.html`: the built site works straight from your computer, with no server needed.
+
 ## Run it locally
 
-You only need Python 3. There are no packages to install.
+To change the site, you only need Python 3. There are no packages to install.
 
 ```bash
 python3 build.py                        # builds src/ into docs/
