@@ -47,13 +47,13 @@ src/_layout.html          # shared header, accessibility bar, footer and feedbac
 src/pages/*.html          # page bodies; each starts with a <!--meta {...} --> JSON header
 src/assets/css/main.css   # the whole design system (tokens + components)
 src/assets/js/            # main.js (shared) + fees.js, offices.js, track.js, search.js
-src/assets/fonts/         # Atkinson Hyperlegible, self-hosted (SIL OFL)
+src/assets/fonts/         # Noto Sans, self-hosted (SIL OFL)
 docs/                     # built site (committed so GitHub Pages can serve it)
 ```
 
 ## Design system
 
-- **Type:** Atkinson Hyperlegible, designed by the Braille Institute for low-vision readers. Its slashed zero keeps file numbers unambiguous. Body text is 19px on desktop and 17px on mobile.
+- **Type:** Noto Sans, the typeface recommended by UX4G (the Government of India design system), with Arial as the fallback. It also covers Hindi script for a future Hindi version. Body text is 18px on desktop and 17px on mobile; headings are semibold.
 - **Colour:** navy `#0b2149` header, a saffron/white/green tricolour rule as the single national-identity flourish, green `#0f6b2e` start buttons, and the GOV.UK yellow focus style. Every text pair is at least 4.5:1, and most are at least 7:1.
 - **Patterns borrowed on purpose:** the GOV.UK start button, inset text, warning text, error summary and "Is this page useful?"; the Canada.ca title accent, alert rail and link-plus-description grid; the France Titres numbered steps and "documents to bring" callout.
 - **Not used:** the State Emblem of India, whose use is restricted by law. The logo is a generic passport mark.
