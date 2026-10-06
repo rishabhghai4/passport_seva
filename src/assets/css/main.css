@@ -4,38 +4,25 @@
    Every colour pair used for text is ≥ 4.5:1 (most are ≥ 7:1).
    ========================================================================== */
 
-/* ---------- Fonts (self-hosted, SIL OFL) ---------- */
+/* ---------- Fonts (self-hosted, SIL OFL) ----------
+   Noto Sans: the typeface recommended by UX4G, the Government of India
+   design system. One variable file covers every weight; the rupee sign
+   comes from a tiny separate subset so pages do not load latin-ext. */
 @font-face {
-  font-family: "Atkinson Hyperlegible";
+  font-family: "Noto Sans";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("../fonts/atkinson-400-latin.woff2") format("woff2");
+  src: url("../fonts/noto-sans-latin.woff2") format("woff2");
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "Atkinson Hyperlegible";
+  font-family: "Noto Sans";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("../fonts/atkinson-400-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/atkinson-700-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: "Atkinson Hyperlegible";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../fonts/atkinson-700-latin-ext.woff2") format("woff2");
-  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  src: url("../fonts/noto-sans-rupee.woff2") format("woff2");
+  unicode-range: U+20B9;
 }
 
 /* ---------- Tokens ---------- */
@@ -84,16 +71,17 @@
   --s-9: 4rem;
 
   /* Type */
-  --font: "Atkinson Hyperlegible", "Noto Sans", "Noto Sans Devanagari", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font: "Noto Sans", "Noto Sans Devanagari", Arial, Helvetica, sans-serif;
+  --fw-bold: 600;
   --fs-body: 1.0625rem;
   --fs-small: 0.9375rem;
-  --fs-lead: 1.25rem;
+  --fs-lead: 1.1875rem;
   --fs-h1: 2rem;
   --fs-h2: 1.5rem;
   --fs-h3: 1.25rem;
   --fs-h4: 1.0625rem;
-  --lh-body: 1.55;
-  --lh-heading: 1.15;
+  --lh-body: 1.6;
+  --lh-heading: 1.2;
 
   --page-width: 66rem;
   --radius: 0;
@@ -108,13 +96,13 @@
 
 @media (min-width: 40.0625em) {
   :root {
-    --fs-body: 1.1875rem;
+    --fs-body: 1.125rem;
     --fs-small: 1rem;
-    --fs-lead: 1.5rem;
-    --fs-h1: 3rem;
-    --fs-h2: 2.25rem;
-    --fs-h3: 1.5rem;
-    --fs-h4: 1.1875rem;
+    --fs-lead: 1.375rem;
+    --fs-h1: 2.75rem;
+    --fs-h2: 2rem;
+    --fs-h3: 1.375rem;
+    --fs-h4: 1.125rem;
   }
 }
 
@@ -181,10 +169,11 @@ svg { flex-shrink: 0; }
 h1, h2, h3, h4 {
   margin: 0 0 var(--s-4);
   line-height: var(--lh-heading);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   text-wrap: balance;
 }
-h1, .h-xl { font-size: var(--fs-h1); margin-bottom: var(--s-6); letter-spacing: -0.01em; }
+h1, .h-xl { font-size: var(--fs-h1); margin-bottom: var(--s-6); letter-spacing: -0.02em; }
+h2, .h-l { letter-spacing: -0.01em; }
 h2, .h-l { font-size: var(--fs-h2); margin-top: var(--s-7); }
 h3, .h-m { font-size: var(--fs-h3); margin-top: var(--s-6); }
 h4, .h-s { font-size: var(--fs-h4); margin-top: var(--s-5); }
@@ -236,7 +225,7 @@ a:hover {
   text-decoration-thickness: max(3px, 0.1875rem, 0.12em);
 }
 a.no-visited:visited { color: var(--c-link); }
-a.link-strong { font-weight: 700; }
+a.link-strong { font-weight: var(--fw-bold); }
 
 /* GOV.UK-style focus: yellow block with dark underline. High visibility, 3:1+ against everything. */
 a:focus-visible {
@@ -325,7 +314,7 @@ a:focus-visible {
   padding: var(--s-2) var(--s-4);
   background: var(--c-focus);
   color: var(--c-focus-text) !important;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 .skip-link:focus { top: var(--s-2); }
 
@@ -373,7 +362,7 @@ a:focus-visible {
   background: transparent;
   color: var(--c-on-dark);
   font: inherit;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: 1;
   cursor: pointer;
   transition: background-color var(--motion-fast) ease-out;
@@ -417,7 +406,7 @@ a:focus-visible {
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__name {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0.01em;
 }
 .brand__dept {
@@ -484,7 +473,7 @@ a:focus-visible {
   background: transparent;
   color: var(--c-on-dark);
   font: inherit;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: 1rem;
   cursor: pointer;
 }
@@ -536,7 +525,7 @@ html[data-contrast="high"] .tricolour { border-bottom: 1px solid #fff; }
   display: block;
   padding: var(--s-3) 0;
   color: var(--c-on-dark) !important;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   text-decoration: none;
   border-bottom: 4px solid transparent;
 }
@@ -567,7 +556,7 @@ html[data-contrast="high"] .tricolour { border-bottom: 1px solid #fff; }
   background: var(--c-blue-tint);
   color: var(--c-navy);
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 1.25;
@@ -631,7 +620,7 @@ html[data-contrast="high"] .tag { background: #fff; color: #000; }
   box-shadow: 0 2px 0 var(--c-success-dark);
   color: #fff !important;
   font: inherit;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: var(--fs-body);
   line-height: 1.2;
   text-decoration: none;
@@ -690,7 +679,7 @@ html[data-contrast="high"] .button--secondary { background: #fff; }
   align-items: flex-start;
   margin: var(--s-5) 0;
   max-width: 42em;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 .warning-text__icon {
   display: inline-flex;
@@ -718,7 +707,7 @@ html[data-contrast="high"] .button--secondary { background: #fff; }
   background: var(--c-navy);
   color: var(--c-on-dark);
   font-size: var(--fs-small);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 .notice__content { padding: var(--s-4) var(--s-4) var(--s-2); }
 .notice__heading { font-size: var(--fs-h3); margin: 0 0 var(--s-3); }
@@ -817,7 +806,7 @@ html[data-contrast="high"] .panel { background: #000; border: 4px solid #fff; }
   padding: var(--s-4) 0;
   cursor: pointer;
   list-style: none;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: var(--fs-h4);
 }
 .accordion__summary::-webkit-details-marker { display: none; }
@@ -858,7 +847,7 @@ html[data-contrast="high"] .panel { background: #000; border: 4px solid #fff; }
 }
 .table caption {
   text-align: left;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: var(--fs-h3);
   margin-bottom: var(--s-4);
 }
@@ -884,11 +873,11 @@ html[data-contrast="high"] .panel { background: #000; border: 4px solid #fff; }
 @media (min-width: 40.0625em) {
   .summary-list__row { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: var(--s-4); }
 }
-.summary-list dt { font-weight: 700; margin: 0; }
+.summary-list dt { font-weight: var(--fw-bold); margin: 0; }
 .summary-list dd { margin: 0; }
 .summary-list__row--total { border-bottom-width: 3px; border-bottom-color: var(--c-border-strong); }
 .summary-list__row--total dt,
-.summary-list__row--total dd { font-size: var(--fs-h3); font-weight: 700; }
+.summary-list__row--total dd { font-size: var(--fs-h3); font-weight: var(--fw-bold); }
 
 /* ---------- Related content sidebar ---------- */
 .related {
@@ -939,7 +928,7 @@ html[data-contrast="high"] .panel { background: #000; border: 4px solid #fff; }
   font-size: var(--fs-lead);
 }
 .location-switch__options { display: inline-flex; flex-wrap: wrap; gap: var(--s-2) var(--s-4); }
-.location-switch__current { font-weight: 700; }
+.location-switch__current { font-weight: var(--fw-bold); }
 
 /* Most requested */
 .most-requested {
@@ -960,7 +949,7 @@ html[data-contrast="high"] .panel { background: #000; border: 4px solid #fff; }
 @media (min-width: 40.0625em) {
   .most-requested__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
-.most-requested__list a { font-weight: 700; }
+.most-requested__list a { font-weight: var(--fw-bold); }
 
 /* Service link grid (Canada.ca pattern: link + one-line description) */
 .link-grid {
@@ -981,7 +970,7 @@ html[data-contrast="high"] .panel { background: #000; border: 4px solid #fff; }
 .link-grid__title {
   display: block;
   font-size: var(--fs-h4);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   margin-bottom: var(--s-1);
 }
 .link-grid__desc { margin: 0; color: var(--c-text-secondary); font-size: var(--fs-small); }
@@ -1026,7 +1015,7 @@ html[data-contrast="high"] .panel { background: #000; border: 4px solid #fff; }
 html[data-contrast="high"] .task-card__icon { color: #fff; }
 .task-card__link {
   font-size: var(--fs-h4);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 /* Whole card is clickable, but only the link is announced. */
 .task-card__link::after {
@@ -1055,7 +1044,7 @@ html[data-contrast="high"] .task-card__icon { color: #fff; }
 .stat__value {
   display: block;
   font-size: calc(var(--fs-h2) * 1.1);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
 }
@@ -1079,7 +1068,7 @@ html[data-contrast="high"] .task-card__icon { color: #fff; }
   font-size: 0.875rem;
   color: var(--c-text-secondary);
 }
-.news-list__title { font-size: var(--fs-h4); font-weight: 700; margin: 0 0 var(--s-1); }
+.news-list__title { font-size: var(--fs-h4); font-weight: var(--fw-bold); margin: 0 0 var(--s-1); }
 .news-list__item p { margin: 0; font-size: var(--fs-small); }
 
 /* App promo */
@@ -1121,7 +1110,7 @@ html[data-contrast="high"] .task-card__icon { color: #fff; }
   border-radius: 50%;
   background: var(--c-bg);
   color: var(--c-navy);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-variant-numeric: tabular-nums;
   z-index: 1;
 }
@@ -1178,7 +1167,7 @@ html[data-contrast="high"] .callout { border: 3px solid #fff; }
   margin-bottom: var(--s-3);
   padding: 0;
   font-size: var(--fs-h3);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: 1.25;
   white-space: normal;
 }
@@ -1187,7 +1176,7 @@ html[data-contrast="high"] .callout { border: 3px solid #fff; }
 .label {
   display: block;
   margin-bottom: var(--s-2);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 .label--l { font-size: var(--fs-h3); }
 .hint {
@@ -1199,7 +1188,7 @@ html[data-contrast="high"] .callout { border: 3px solid #fff; }
   display: block;
   margin-bottom: var(--s-3);
   color: var(--c-error);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 .input,
 .select {
@@ -1354,7 +1343,7 @@ html[data-contrast="high"] .callout { border: 3px solid #fff; }
 .error-summary:focus { outline: var(--focus-width) solid var(--c-focus); }
 .error-summary__title { font-size: var(--fs-h3); margin: 0 0 var(--s-4); }
 .error-summary__list { list-style: none; padding: 0; margin: 0; }
-.error-summary__list a { color: var(--c-error); font-weight: 700; }
+.error-summary__list a { color: var(--c-error); font-weight: var(--fw-bold); }
 .error-summary__list a:focus-visible { color: var(--c-focus-text); }
 
 /* Conditional reveal for form questions */
@@ -1378,9 +1367,9 @@ html[data-contrast="high"] .callout { border: 3px solid #fff; }
   padding: var(--s-3) 0;
   border-bottom: 1px solid var(--c-border);
 }
-.finder-results__name { font-weight: 700; display: block; }
+.finder-results__name { font-weight: var(--fw-bold); display: block; }
 .finder-results__state { color: var(--c-text-secondary); font-size: var(--fs-small); }
-.result-count { font-weight: 700; margin: var(--s-4) 0; }
+.result-count { font-weight: var(--fw-bold); margin: var(--s-4) 0; }
 
 /* ---------- Status timeline (track page) ---------- */
 .timeline { list-style: none; padding: 0; margin: 0 0 var(--s-6); max-width: 44rem; }
@@ -1404,7 +1393,7 @@ html[data-contrast="high"] .callout { border: 3px solid #fff; }
   background: var(--c-bg);
 }
 html[data-contrast="high"] .timeline__item::before { border-color: #fff; }
-.timeline__title { font-weight: 700; margin: 0 0 var(--s-1); font-size: var(--fs-h4); }
+.timeline__title { font-weight: var(--fw-bold); margin: 0 0 var(--s-1); font-size: var(--fs-h4); }
 .timeline__item p { margin: 0; color: var(--c-text-secondary); }
 
 /* ---------- Feedback component ---------- */
@@ -1426,7 +1415,7 @@ html[data-contrast="high"] .timeline__item::before { border-color: #fff; }
 .feedback .button { margin: 0; min-width: 4.5rem; }
 .feedback .button--secondary { background: var(--c-bg); border-color: var(--c-border); }
 .feedback .button--secondary:hover { background: var(--c-blue-tint); }
-.feedback__thanks { margin: 0; font-weight: 700; }
+.feedback__thanks { margin: 0; font-weight: var(--fw-bold); }
 
 /* ---------- Footer ---------- */
 .footer {
@@ -1500,7 +1489,7 @@ html[data-contrast="high"] .footer__helpline svg { color: #fff; }
   align-items: center;
   gap: var(--s-2);
   margin-top: var(--s-6);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 /* ---------- Motion & print ---------- */
