@@ -1,0 +1,16 @@
+<!--meta {"title": "Search", "description": "Search the Passport Seva website.", "nav": "", "noindex": true, "breadcrumbs": [["Home", "index.html"], ["Search", null]], "scripts": ["search-index.js", "search.js"]} -->
+<div class="width-container">
+  <div class="col-two-thirds">
+    <h1>Search Passport Seva</h1>
+    <form action="search.html" method="get" role="search" aria-label="Search again" class="form-group">
+      <label class="label" for="search-page-input">Search</label>
+      <div class="search-form">
+        <input class="search-form__input" id="search-page-input" name="q" type="search" autocomplete="off">
+        <button class="search-form__button" type="submit">{{icon:search:20}}<span class="visually-hidden">Search</span></button>
+      </div>
+    </form>
+    <p class="result-count" role="status" aria-live="polite" data-search-count></p>
+    <ul class="news-list" data-search-results></ul>
+    <noscript><p>Search needs JavaScript. You can browse from the <a href="index.html">home page</a> instead.</p></noscript>
+  </div>
+</div>

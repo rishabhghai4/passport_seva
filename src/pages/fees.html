@@ -1,0 +1,175 @@
+<!--meta {"title": "Passport fees", "description": "Indian passport fees from 1 July 2026, with a calculator to work out what you will pay for a new, re-issued or replacement passport, Tatkaal or a Police Clearance Certificate.", "nav": "fees", "breadcrumbs": [["Home", "index.html"], ["Passports", "index.html#get-passport"], ["Fees", null]], "scripts": ["fees.js"]} -->
+<div class="width-container">
+  <div class="grid grid--two-thirds">
+    <div class="col-two-thirds">
+      <h1>Passport fees</h1>
+      <p class="lead">Passport fees changed on 1 July 2026. You pay online when you book your appointment.</p>
+
+      <div class="notice" role="region" aria-labelledby="notice-title">
+        <h2 class="notice__title" id="notice-title">Important</h2>
+        <div class="notice__content">
+          <p class="notice__heading">An adult’s 36-page passport now costs ₹2,500, up from ₹1,500.</p>
+          <p>A 60-page passport now costs ₹3,500, and Tatkaal adds ₹2,500 to any passport fee.</p>
+        </div>
+      </div>
+
+      <section id="calculator" aria-labelledby="calc-title" data-fee-calculator hidden>
+        <h2 id="calc-title">Work out your fee</h2>
+        <p>Answer the questions to see what you will pay.</p>
+
+        <form novalidate data-fee-form>
+          <div class="form-group">
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">What do you need?</legend>
+              <div class="radios">
+                <div class="radio">
+                  <input class="radio__input" id="svc-new" name="service" type="radio" value="new">
+                  <label class="radio__label" for="svc-new">A passport for the first time</label>
+                </div>
+                <div class="radio">
+                  <input class="radio__input" id="svc-reissue" name="service" type="radio" value="reissue">
+                  <label class="radio__label" for="svc-reissue">Renew or re-issue a passport
+                    <span class="radio__hint">It has expired, is expiring, or the pages are full</span></label>
+                </div>
+                <div class="radio">
+                  <input class="radio__input" id="svc-change" name="service" type="radio" value="change">
+                  <label class="radio__label" for="svc-change">Change my details or remove ECR status</label>
+                </div>
+                <div class="radio">
+                  <input class="radio__input" id="svc-lost" name="service" type="radio" value="lost">
+                  <label class="radio__label" for="svc-lost">Replace a lost, stolen or damaged passport</label>
+                </div>
+                <p class="radios__divider">or</p>
+                <div class="radio">
+                  <input class="radio__input" id="svc-pcc" name="service" type="radio" value="pcc">
+                  <label class="radio__label" for="svc-pcc">Police Clearance Certificate (PCC)</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group" data-q="age" hidden>
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">How old is the applicant?</legend>
+              <div class="radios">
+                <div class="radio"><input class="radio__input" id="age-0" name="age" type="radio" value="0-8"><label class="radio__label" for="age-0">8 or under</label></div>
+                <div class="radio"><input class="radio__input" id="age-9" name="age" type="radio" value="9-14"><label class="radio__label" for="age-9">9 to 14</label></div>
+                <div class="radio"><input class="radio__input" id="age-15" name="age" type="radio" value="15-17"><label class="radio__label" for="age-15">15 to 17</label></div>
+                <div class="radio"><input class="radio__input" id="age-18" name="age" type="radio" value="18-60"><label class="radio__label" for="age-18">18 to 60</label></div>
+                <div class="radio"><input class="radio__input" id="age-61" name="age" type="radio" value="61+"><label class="radio__label" for="age-61">Over 60</label></div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group" data-q="validity" hidden>
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">Which passport does the applicant want?</legend>
+              <span class="hint">Applicants aged 15 to 17 can choose a full 10-year passport.</span>
+              <div class="radios">
+                <div class="radio"><input class="radio__input" id="val-5" name="validity" type="radio" value="5"><label class="radio__label" for="val-5">5 years, or until they turn 18</label></div>
+                <div class="radio"><input class="radio__input" id="val-10" name="validity" type="radio" value="10"><label class="radio__label" for="val-10">10 years</label></div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group" data-q="pages" hidden>
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">How many pages?</legend>
+              <span class="hint">Choose 60 pages if you travel often and need room for visas.</span>
+              <div class="radios radios--inline">
+                <div class="radio"><input class="radio__input" id="pages-36" name="pages" type="radio" value="36"><label class="radio__label" for="pages-36">36 pages</label></div>
+                <div class="radio"><input class="radio__input" id="pages-60" name="pages" type="radio" value="60"><label class="radio__label" for="pages-60">60 pages</label></div>
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="form-group" data-q="scheme" hidden>
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">Normal or Tatkaal?</legend>
+              <span class="hint"><a href="tatkaal.html">Tatkaal</a> is faster and costs ₹2,500 more.</span>
+              <div class="radios radios--inline">
+                <div class="radio"><input class="radio__input" id="scheme-normal" name="scheme" type="radio" value="normal"><label class="radio__label" for="scheme-normal">Normal</label></div>
+                <div class="radio"><input class="radio__input" id="scheme-tatkaal" name="scheme" type="radio" value="tatkaal"><label class="radio__label" for="scheme-tatkaal">Tatkaal</label></div>
+              </div>
+            </fieldset>
+          </div>
+        </form>
+
+        <div aria-live="polite" data-fee-result-region>
+          <div data-fee-result hidden>
+            <div class="panel panel--navy">
+              <h3 class="panel__title">You will pay <span class="num" data-fee-total></span></h3>
+              <p class="panel__body" data-fee-label></p>
+            </div>
+            <dl class="summary-list" data-fee-breakdown></dl>
+            <p class="small secondary">Card payments may have a bank charge of about 1.5% plus tax. SBI net banking has no extra charge.</p>
+            <button type="button" class="button button--secondary" data-fee-reset>Start again</button>
+          </div>
+        </div>
+      </section>
+
+      <h2 id="all-fees">All passport fees</h2>
+      <p>The Tatkaal fee is added to the passport fee. Fees cannot be refunded.</p>
+      <div class="table-wrap" tabindex="0" role="region" aria-label="Passport fees table">
+        <table class="table">
+          <caption class="visually-hidden">Passport and certificate fees from 1 July 2026</caption>
+          <thead>
+            <tr>
+              <th scope="col">Service</th>
+              <th scope="col" class="numeric">Fee</th>
+              <th scope="col" class="numeric">Extra for Tatkaal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">New or re-issued passport, 36 pages, 10 years</th><td class="numeric">₹2,500</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">New or re-issued passport, 60 pages, 10 years</th><td class="numeric">₹3,500</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">New or re-issued passport for under 18s, 36 pages, 5 years or until 18</th><td class="numeric">₹1,750</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">Replacing a lost, stolen or damaged passport, 36 pages, 5 years</th><td class="numeric">₹4,250</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">Replacing a lost, stolen or damaged passport, 36 pages, 10 years</th><td class="numeric">₹5,000</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">Replacing a lost, stolen or damaged passport, 60 pages</th><td class="numeric">₹6,000</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">Changing details or removing ECR, 36 pages, 10 years</th><td class="numeric">₹2,500</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">Changing details or removing ECR, 60 pages, 10 years</th><td class="numeric">₹3,500</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">Changing details or removing ECR for under 18s, 36 pages</th><td class="numeric">₹1,750</td><td class="numeric">₹2,500</td></tr>
+            <tr><th scope="row">Police Clearance Certificate (PCC)</th><td class="numeric">₹750</td><td class="numeric">Not available</td></tr>
+            <tr><th scope="row">Global Entry Program background verification</th><td class="numeric">₹750</td><td class="numeric">Not available</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Changing details or removing ECR gets you a new passport booklet.</p>
+      <h3 id="discount">Discount for young children and senior citizens</h3>
+      <p>For a new passport (not a re-issue), you get 10% off the basic passport fee if the applicant is 8 or under, or over 60.</p>
+      <p>There is no fee for diplomatic or official passports.</p>
+
+      <h2 id="pay">How to pay</h2>
+      <p>You must pay online before you can book an appointment. You can pay by:</p>
+      <ul>
+        <li>debit or credit card (Visa, Mastercard or RuPay)</li>
+        <li>net banking (SBI and other banks)</li>
+        <li>UPI</li>
+        <li>SBI wallet</li>
+      </ul>
+      <p>Your payment is valid for one year from the date you paid, or from your first appointment if you have booked one. It cannot be moved to another application.</p>
+
+      <details class="details">
+        <summary class="details__summary"><span class="details__summary-text">If money left your account but the payment shows as failed or pending</span></summary>
+        <div class="details__text">
+          <p>If the status is <strong>Pending</strong>, check again on the next working day using <strong>Track Payment Status</strong> on your Applicant Home page.</p>
+          <p>If the status is <strong>Failed</strong>, SBI will refund your bank within 7 working days. If it does not, email <a href="mailto:customercare.00691@sbi.co.in">customercare.00691@sbi.co.in</a> or call <a href="tel:01141561114">011-41561114</a> (10am to 5pm) with your application reference number, transaction ID, amount and date.</p>
+          <p>If you paid twice, the Regional Passport Office will refund the extra payment.</p>
+        </div>
+      </details>
+    </div>
+
+    <aside aria-label="Related content">
+      <div class="related related--sticky">
+        <h2 class="related__heading">Related content</h2>
+        <ul>
+          <li><a href="apply.html">Apply for a passport or renew one</a></li>
+          <li><a href="tatkaal.html">Get a passport urgently (Tatkaal)</a></li>
+          <li><a href="documents.html">Documents you need</a></li>
+          <li><a href="https://www.passportindia.gov.in/psp/onlineHtml/feeDocument">Official fee structure{{ext}}</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+</div>
